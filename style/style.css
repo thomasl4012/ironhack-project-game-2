@@ -98,11 +98,8 @@
   }
 }
 
-body {
-  text-align: center;
-}
-
 .win {
+  text-align: center;
   background: linear-gradient(268deg, #4cf607, #8eed68, #c7f0b7);
   background-size: 600% 600%;
 
@@ -146,6 +143,7 @@ body {
 }
 
 .lose {
+  text-align: center;
   background: linear-gradient(270deg, #ff5759, #fe080b, #f8c2c3);
   background-size: 600% 600%;
 
