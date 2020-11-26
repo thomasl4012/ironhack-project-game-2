@@ -187,12 +187,12 @@
 }
 
 .hard {
-  background: linear-gradient(270deg, #f29505, #f0cb14, #f05614);
-  background-size: 600% 600%;
+  background: linear-gradient(270deg, #f2b505, #f03914, #f0b714, #f03914);
+  background-size: 800% 800%;
 
-  -webkit-animation: AnimationNameHard 11s ease infinite;
-  -moz-animation: AnimationNameHard 11s ease infinite;
-  animation: AnimationNameHard 11s ease infinite;
+  -webkit-animation: AnimationNameHard 9s ease infinite;
+  -moz-animation: AnimationNameHard 9s ease infinite;
+  animation: AnimationNameHard 9s ease infinite;
 }
 
 @-webkit-keyframes AnimationNameHard {

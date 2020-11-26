@@ -27,7 +27,7 @@ window.addEventListener(
 
 //Timer function
 function timer() {
-  let currentTime = 60;
+  let currentTime = 40;
   let timerRef = setInterval(() => {
     currentTime = currentTime - 1;
     let scoreFinal = 0;
