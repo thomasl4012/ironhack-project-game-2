@@ -3,12 +3,16 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const timerSelector = document.querySelector("#timer");
 const cols = maze1[0].length; // number of col in the maze
-
+const scoreSelector = document.querySelector("#score");
 const size = parseInt(canvas.width / cols);
 
 const worldArr = [];
 let fired = false;
 console.log(fired);
+
+//set color for wall
+
+let wallcolor = "green";
 
 // deactivate keyinput to avoid scroll when player moves
 window.addEventListener(
@@ -26,12 +30,19 @@ function timer() {
   let currentTime = 60;
   let timerRef = setInterval(() => {
     currentTime = currentTime - 1;
+    let scoreFinal = 0;
     timerSelector.innerText = currentTime;
+    scoreFinal = currentTime * 10 * 2;
+    scoreSelector.innerText = scoreFinal;
+    let scoreSave = 0;
+    scoreSave = sessionStorage.setItem("score", scoreFinal);
+
     if (currentTime <= 0) {
       clearInterval(timerRef);
       alert("you loose !!!");
       window.location.href = "../loosepage.html";
     }
+    return scoreFinal;
   }, 1000);
 }
 
@@ -64,10 +75,6 @@ let gradient = ctx.createLinearGradient(0, 23, 32, 170);
 gradient.addColorStop(0, "pink");
 gradient.addColorStop(1, "blue");
 
-//set color for wall
-
-let wallcolor = "green";
-
 //create object player
 const player = {
   // starting position
@@ -75,7 +82,7 @@ const player = {
   y: 0,
   width: size,
   height: size,
-  color: "blue",
+  color: gradient,
 
   up: function () {
     let blocked = false; // define state blocked
@@ -101,7 +108,7 @@ const player = {
     if (!blocked) this.y += size;
 
     if (this.y === 580 && this.x === 200) {
-      alert("you win !!!");
+      alert(`you win !!!`);
       window.location.href = "../winpage.html";
     }
   },

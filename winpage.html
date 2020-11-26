@@ -33,7 +33,14 @@
         top: 5px;
       }
     </style>
+
     <h1>You win !</h1>
+    <p>your score is : <span id="score">0</span></p>
     <a href="./index.html">Play again ?</a>
+    <script>
+      let score = document.querySelector("#score");
+      let scoreFinal = sessionStorage.getItem("score");
+      score.innerText = scoreFinal;
+    </script>
   </body>
 </html>
