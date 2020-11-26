@@ -79,7 +79,7 @@ gradient.addColorStop(1, "blue");
 const player = {
   // starting position
   x: 20,
-  y: 0,
+  y: 20,
   width: size,
   height: size,
   color: gradient,
