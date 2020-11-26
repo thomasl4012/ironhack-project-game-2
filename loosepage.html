@@ -10,10 +10,30 @@
       body {
         font-family: monospace;
         text-align: center;
-        background-color: #f8ef42;
-        background-image: linear-gradient(315deg, #f8ef42 0%, #0fd64f 74%);
+        background-color: #3f0d12;
+        background-image: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
+      }
+      a {
+        background-color: red;
+        box-shadow: 0 5px 0 darkred;
+        color: white;
+        padding: 1em 1.5em;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      a:hover {
+        background-color: #ce0606;
+        cursor: pointer;
+      }
+
+      a:active {
+        box-shadow: none;
+        top: 5px;
       }
     </style>
-    <p>you loose</p>
+    <h1>you loose</h1>
+    <a href="./index.html">Play again ?</a>
   </body>
 </html>

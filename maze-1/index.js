@@ -35,13 +35,6 @@ function timer() {
   }, 1000);
 }
 
-window.onkeydown = function () {
-  if (fired === false) {
-    fired = true;
-    timer();
-  }
-};
-
 //const startBtn = document.getElementById("start");
 //startBtn.addEventListener("click", timer);
 
@@ -176,6 +169,10 @@ window.onkeydown = function (e) {
     case 39:
       player.right();
       break;
+  }
+  if (fired === false) {
+    fired = true;
+    timer();
   }
 
   createMaze();
