@@ -107,7 +107,7 @@ const player = {
 
     if (!blocked) this.y += size;
 
-    if (this.y === 580 && this.x === 200) {
+    if (this.y === 600 && this.x === 200) {
       alert(`you win !!!`);
       window.location.href = "../winpage.html";
     }
