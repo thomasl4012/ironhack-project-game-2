@@ -12,7 +12,7 @@ console.log(fired);
 
 //set color for wall
 
-let wallcolor = "green";
+let wallcolor = "red";
 
 // deactivate keyinput to avoid scroll when player moves
 window.addEventListener(

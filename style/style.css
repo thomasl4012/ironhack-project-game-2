@@ -185,3 +185,46 @@
     background-position: 0% 50%;
   }
 }
+
+.hard {
+  background: linear-gradient(270deg, #f29505, #f0cb14, #f05614);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationNameHard 11s ease infinite;
+  -moz-animation: AnimationNameHard 11s ease infinite;
+  animation: AnimationNameHard 11s ease infinite;
+}
+
+@-webkit-keyframes AnimationNameHard {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimationNameHard {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationNameHard {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
