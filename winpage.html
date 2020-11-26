@@ -3,40 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>win !</title>
   </head>
-  <body>
-    <style>
-      body {
-        font-family: monospace;
-        text-align: center;
-        background-color: #f8ef42;
-        background-image: linear-gradient(315deg, #f8ef42 0%, #0fd64f 74%);
-      }
-      a {
-        background-color: red;
-        box-shadow: 0 5px 0 darkred;
-        color: white;
-        padding: 1em 1.5em;
-        position: relative;
-        text-decoration: none;
-        text-transform: uppercase;
-      }
-
-      a:hover {
-        background-color: #ce0606;
-        cursor: pointer;
-      }
-
-      a:active {
-        box-shadow: none;
-        top: 5px;
-      }
-    </style>
-
-    <h1>You win !</h1>
-    <p>your score is : <span id="score">0</span></p>
-    <a href="./index.html">Play again ?</a>
+  <body class="win">
+    <h1 style="margin-bottom: 20px; margin-top: 60px">You win !</h1>
+    <p style="margin-bottom: 50px">your score is : <span id="score">0</span></p>
+    <a class="nes-btn is-success" href="./index.html">Play again ?</a>
     <script>
       let score = document.querySelector("#score");
       let scoreFinal = sessionStorage.getItem("score");

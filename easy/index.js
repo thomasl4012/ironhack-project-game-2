@@ -1,4 +1,4 @@
-import { maze1 } from "./maze.js";
+import { maze1 } from "../maze/maze.js";
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const timerSelector = document.querySelector("#timer");

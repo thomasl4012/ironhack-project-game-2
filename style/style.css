@@ -1,0 +1,189 @@
+.block {
+  float: right;
+  margin-right: 530px;
+  border: dashed 5px;
+  height: 50px;
+  width: 155px;
+  padding: 16px;
+  text-align: center;
+  padding-bottom: 145px;
+}
+
+.menu {
+  text-align: center;
+  background: linear-gradient(270deg, #0af2b6, #72ffda, #52b49a);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 11s ease infinite;
+  -moz-animation: AnimationName 11s ease infinite;
+  animation: AnimationName 11s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.easy {
+  margin-top: 30px;
+  margin-left: 30px;
+  background: linear-gradient(266deg, #0af20f, #a1ff72, #42e10e);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationNameEasy 7s ease infinite;
+  -moz-animation: AnimationNameEasy 7s ease infinite;
+  animation: AnimationNameEasy 7s ease infinite;
+}
+
+@-webkit-keyframes AnimationNameEasy {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimationNameEasy {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationNameEasy {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  text-align: center;
+}
+
+.win {
+  background: linear-gradient(268deg, #4cf607, #8eed68, #c7f0b7);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationNamewin 0s ease infinite;
+  -moz-animation: AnimationNamewin 0s ease infinite;
+  animation: AnimationNamewin 0s ease infinite;
+}
+
+@-webkit-keyframes AnimationNamewin {
+  0% {
+    background-position: 0% 55%;
+  }
+  50% {
+    background-position: 100% 46%;
+  }
+  100% {
+    background-position: 0% 55%;
+  }
+}
+@-moz-keyframes AnimationNamewin {
+  0% {
+    background-position: 0% 55%;
+  }
+  50% {
+    background-position: 100% 46%;
+  }
+  100% {
+    background-position: 0% 55%;
+  }
+}
+@keyframes AnimationNamewin {
+  0% {
+    background-position: 0% 55%;
+  }
+  50% {
+    background-position: 100% 46%;
+  }
+  100% {
+    background-position: 0% 55%;
+  }
+}
+
+.lose {
+  background: linear-gradient(270deg, #ff5759, #fe080b, #f8c2c3);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationNameLose 16s ease infinite;
+  -moz-animation: AnimationNameLose 16s ease infinite;
+  animation: AnimationNameLose 16s ease infinite;
+}
+
+@-webkit-keyframes AnimationNameLose {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimationNameLose {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationNameLose {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

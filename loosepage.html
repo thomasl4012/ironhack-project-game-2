@@ -3,37 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>You loose</title>
   </head>
-  <body>
-    <style>
-      body {
-        font-family: monospace;
-        text-align: center;
-        background-color: #3f0d12;
-        background-image: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
-      }
-      a {
-        background-color: red;
-        box-shadow: 0 5px 0 darkred;
-        color: white;
-        padding: 1em 1.5em;
-        position: relative;
-        text-decoration: none;
-        text-transform: uppercase;
-      }
-
-      a:hover {
-        background-color: #ce0606;
-        cursor: pointer;
-      }
-
-      a:active {
-        box-shadow: none;
-        top: 5px;
-      }
-    </style>
-    <h1>you loose</h1>
-    <a href="./index.html">Play again ?</a>
+  <body class="lose">
+    <h1 style="margin-top: 50px; margin-bottom: 20px">you lost</h1>
+    <a class="nes-btn is-error" href="./index.html">Play again ?</a>
   </body>
 </html>

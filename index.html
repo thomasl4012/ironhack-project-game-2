@@ -3,18 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style/style.css" />
     <title>Maze</title>
   </head>
-  <body>
-    <h1>The Pixel Maze</h1>
-    <div>
+  <body class="menu">
+    <div style="margin-bottom: 50px; margin-top: 60px">
+      <h1>The Pixel Maze</h1>
+
       <h2>Instruction</h2>
+
+      <p>Find the way out of the maze in time</p>
+      <p>You can move with the arrows</p>
     </div>
-    <p>Find the way out of the maze in time</p>
-    <p>You can move with the arrows</p>
     <div>
-      <a href="./maze-1/maze.html">start</a>
+      <a class="nes-btn is-primary" href="./easy/maze.html">Easy</a>
+      <a class="nes-btn is-primary" href="./hard/maze.html">Hard</a>
     </div>
   </body>
 </html>
