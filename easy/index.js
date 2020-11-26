@@ -8,7 +8,7 @@ const size = parseInt(canvas.width / cols);
 
 const worldArr = [];
 let fired = false;
-console.log(fired);
+console.log(maze1);
 
 //set color for wall
 
@@ -27,7 +27,7 @@ window.addEventListener(
 
 //Timer function
 function timer() {
-  let currentTime = 60;
+  let currentTime = 30;
   let timerRef = setInterval(() => {
     currentTime = currentTime - 1;
     let scoreFinal = 0;

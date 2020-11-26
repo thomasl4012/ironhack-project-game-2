@@ -1,12 +1,20 @@
+import { maze2 } from "../maze/maze.js";
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const timerSelector = document.querySelector("#timer");
-const cols = 24; // number of col in the maze
+const cols = maze2[0].length; // number of col in the maze
+const scoreSelector = document.querySelector("#score");
 const size = parseInt(canvas.width / cols);
-console.log(size);
-const worldArr = [];
 
-// deactivate keyinput to avoid scroll
+const worldArr = [];
+let fired = false;
+console.log(fired);
+
+//set color for wall
+
+let wallcolor = "green";
+
+// deactivate keyinput to avoid scroll when player moves
 window.addEventListener(
   "keydown",
   function (e) {
@@ -16,73 +24,35 @@ window.addEventListener(
   },
   false
 );
-var sprite;
-sprite = new Image();
-sprite.src =
-  "https://image.ibb.co/dr1HZy/Pf_RWr3_X_Imgur.png" +
-  "?" +
-  new Date().getTime();
-sprite.setAttribute("crossOrigin", " ");
 
+//Timer function
 function timer() {
   let currentTime = 60;
   let timerRef = setInterval(() => {
     currentTime = currentTime - 1;
+    let scoreFinal = 0;
     timerSelector.innerText = currentTime;
+    scoreFinal = currentTime * 10 * 2;
+    scoreSelector.innerText = scoreFinal;
+    let scoreSave = 0;
+    scoreSave = sessionStorage.setItem("score", scoreFinal);
+
     if (currentTime <= 0) {
       clearInterval(timerRef);
       alert("you loose !!!");
       window.location.href = "../loosepage.html";
     }
+    return scoreFinal;
   }, 1000);
 }
 
-const startBtn = document.getElementById("start");
-startBtn.addEventListener("click", timer);
-
-function addCssClass() {
-  startBtn.classList.add("go");
-}
-
-startBtn.addEventListener("click", addCssClass);
+//const startBtn = document.getElementById("start");
+//startBtn.addEventListener("click", timer);
 
 //maze array creation
 
-const maze = [
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
-  [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1],
-  [1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1],
-  [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1],
-  [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1],
-  [1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1],
-  [1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1],
-  [1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1],
-  [1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
-  [1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1],
-  [1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
-  [1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
-  [1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1],
-  [1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
-  [1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1],
-  [1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1],
-  [1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1],
-  [1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1],
-  [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1],
-  [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1],
-  [1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1],
-  [1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1],
-  [1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1],
-  [1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1],
-  [1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1],
-  [1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1],
-  [1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-];
-
 // Push maze in wolrd array with wall and floor prop
-maze.forEach((row, rowIndex) => {
+maze2.forEach((row, rowIndex) => {
   row.forEach((col, colIndex) => {
     worldArr.push({
       prop: col === 1 ? "wall" : "floor",
@@ -105,19 +75,16 @@ let gradient = ctx.createLinearGradient(0, 23, 32, 170);
 gradient.addColorStop(0, "pink");
 gradient.addColorStop(1, "blue");
 
-//set color for wall test
-
-let wallcolor = "green";
-
 //create object player
 const player = {
-  x: 340,
+  // starting position
+  x: 20,
   y: 0,
   width: size,
   height: size,
-  color: "blue",
+  color: gradient,
 
-  moveUp: function () {
+  up: function () {
     let blocked = false; // define state blocked
 
     wall.forEach((element) => {
@@ -129,7 +96,7 @@ const player = {
     if (!blocked) this.y -= size;
   },
 
-  moveDown: function () {
+  down: function () {
     let blocked = false;
 
     wall.forEach((element) => {
@@ -139,13 +106,12 @@ const player = {
     });
 
     if (!blocked) this.y += size;
-
-    if (this.y === 580 && this.x === 200) {
-      alert("you win !!!");
+    if (this.y === 580 && this.x === 560) {
+      alert(`you win !!!`);
       window.location.href = "../winpage.html";
     }
   },
-  moveLeft: function () {
+  left: function () {
     let blocked = false;
 
     wall.forEach((element) => {
@@ -156,7 +122,7 @@ const player = {
 
     if (!blocked) this.x -= size;
   },
-  moveRight: function () {
+  right: function () {
     let blocked = false;
 
     wall.forEach((element) => {
@@ -169,7 +135,6 @@ const player = {
   },
 };
 
-console.log(typeof player);
 const createMaze = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = wallcolor;
@@ -191,28 +156,30 @@ const createMaze = () => {
   ctx.fillRect(player.x - 2, player.y - 2, player.width - 2, player.height - 2);
   ctx.restore();
 };
-console.log(player);
+
 createMaze();
 
-if (startBtn.classList === "go") {
-  window.onkeydown = function (e) {
-    const key = e.keyCode;
+window.onkeydown = function (e) {
+  const key = e.keyCode;
 
-    switch (key) {
-      case 38:
-        player.moveUp();
-        break;
-      case 40:
-        player.moveDown();
-        break;
-      case 37:
-        player.moveLeft();
-        break;
-      case 39:
-        player.moveRight();
-        break;
-    }
+  switch (key) {
+    case 38:
+      player.up();
+      break;
+    case 40:
+      player.down();
+      break;
+    case 37:
+      player.left();
+      break;
+    case 39:
+      player.right();
+      break;
+  }
+  if (fired === false) {
+    fired = true;
+    timer();
+  }
 
-    createMaze();
-  };
-}
+  createMaze();
+};
