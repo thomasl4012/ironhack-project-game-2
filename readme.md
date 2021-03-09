@@ -1,4 +1,4 @@
-Simple Maze game
+Simple Maze game made in Javascript
 
 Instruction :
 
